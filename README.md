@@ -1,5 +1,5 @@
 # pixiv
-
+![test](https://github.com/Rorical/pixiv/workflows/test/badge.svg)
 Pixiv API for Golang (with Auth supported)
 
 Forked from [everpcpc/pixiv](https://github.com/everpcpc/pixiv)
