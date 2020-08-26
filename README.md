@@ -1,19 +1,18 @@
 # pixiv
 
-![test](https://github.com/everpcpc/pixiv/workflows/test/badge.svg?branch=master&event=push)
-[![codecov](https://codecov.io/gh/everpcpc/pixiv/branch/master/graph/badge.svg)](https://codecov.io/gh/everpcpc/pixiv)
-[![Go Report Card](https://goreportcard.com/badge/github.com/everpcpc/pixiv)](https://goreportcard.com/report/github.com/everpcpc/pixiv)
-[![godoc](https://img.shields.io/badge/godoc-reference-5272B4.svg)](https://godoc.org/github.com/everpcpc/pixiv)
-
 Pixiv API for Golang (with Auth supported)
 
+Forked from [everpcpc/pixiv](https://github.com/everpcpc/pixiv)
 Inspired by [pixivpy](https://github.com/upbit/pixivpy)
 
-## example
+I applied some changes to meet my purpose.
+
+## Useage
 
 ```golang
-account, err := pixiv.Login("username", "password")
-app := pixiv.NewApp()
+api := pixiv.AppPixivAPI()
+api.BaseAPI.HookAccessToken(func(token string) { fmt.Println(token) })
+api.BaseAPI.Login("#Username","@Password")
 user, err := app.UserDetail(uid)
 illusts, next, err := app.UserIllusts(uid, "illust", 0)
 illusts, next, err := app.UserBookmarksIllust(uid, "public", 0, "")
